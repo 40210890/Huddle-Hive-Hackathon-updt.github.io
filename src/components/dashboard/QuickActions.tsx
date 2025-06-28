@@ -2,7 +2,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useNavigate } from 'react-router-dom';
-import { Search, Users, FileSearch, Calendar, Message, User } from 'lucide-react';
+import { Search, Users, FileSearch, Calendar, MessageCircle, User } from 'lucide-react';
 
 const quickActions = [
   {
@@ -36,7 +36,7 @@ const quickActions = [
   {
     title: "Join Community",
     description: "Connect with like-minded professionals",
-    icon: Message,
+    icon: MessageCircle,
     route: "/community",
     color: "bg-teal-50 hover:bg-teal-100 border-teal-200"
   },

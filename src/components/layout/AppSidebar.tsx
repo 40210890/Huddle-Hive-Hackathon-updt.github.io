@@ -6,7 +6,7 @@ import {
   Calendar, 
   Users, 
   Search,
-  Message,
+  MessageCircle,
   FileSearch,
   LogOut
 } from "lucide-react"
@@ -31,7 +31,7 @@ const navigationItems = [
   { title: "Mentorship", url: "/mentorship", icon: Users },
   { title: "Job Board", url: "/jobs", icon: FileSearch },
   { title: "Workshops", url: "/workshops", icon: Calendar },
-  { title: "Community", url: "/community", icon: Message },
+  { title: "Community", url: "/community", icon: MessageCircle },
   { title: "Career Explorer", url: "/career-explorer", icon: Search },
 ]
 
@@ -40,9 +40,10 @@ interface AppSidebarProps {
 }
 
 export function AppSidebar({ onLogout }: AppSidebarProps) {
-  const { collapsed } = useSidebar()
+  const { state } = useSidebar()
   const location = useLocation()
   const currentPath = location.pathname
+  const collapsed = state === "collapsed"
 
   const isActive = (path: string) => currentPath === path
   const getNavCls = ({ isActive }: { isActive: boolean }) =>
@@ -51,7 +52,7 @@ export function AppSidebar({ onLogout }: AppSidebarProps) {
   return (
     <Sidebar
       className={collapsed ? "w-14" : "w-64"}
-      collapsible
+      collapsible="icon"
     >
       <SidebarContent className="bg-sidebar-background">
         <div className="p-4 border-b border-sidebar-border">
