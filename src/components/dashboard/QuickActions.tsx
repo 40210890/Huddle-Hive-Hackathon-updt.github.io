@@ -7,45 +7,45 @@ import { Search, Users, FileSearch, Calendar, MessageCircle, User } from 'lucide
 const quickActions = [
   {
     title: "Find Scholarships",
-    description: "Browse available funding opportunities",
+    description: "Access funding opportunities for BAME professionals",
     icon: Search,
     route: "/scholarships",
-    color: "bg-blue-50 hover:bg-blue-100 border-blue-200"
+    color: "bg-purple-50 hover:bg-purple-100 border-purple-200 dark:bg-purple-950 dark:hover:bg-purple-900 dark:border-purple-800"
   },
   {
     title: "Connect with Mentors",
-    description: "Find experienced professionals to guide you",
+    description: "Find experienced BAME leaders to guide your career",
     icon: Users,
     route: "/mentorship",
-    color: "bg-green-50 hover:bg-green-100 border-green-200"
+    color: "bg-pink-50 hover:bg-pink-100 border-pink-200 dark:bg-pink-950 dark:hover:bg-pink-900 dark:border-pink-800"
   },
   {
-    title: "Explore Jobs",
-    description: "Discover career opportunities",
+    title: "Explore UK Jobs",
+    description: "Discover opportunities across the UK energy sector",
     icon: FileSearch,
     route: "/jobs",
-    color: "bg-purple-50 hover:bg-purple-100 border-purple-200"
+    color: "bg-indigo-50 hover:bg-indigo-100 border-indigo-200 dark:bg-indigo-950 dark:hover:bg-indigo-900 dark:border-indigo-800"
   },
   {
     title: "Join Workshops",
-    description: "Enhance your skills with training",
+    description: "Enhance skills with diversity-focused training",
     icon: Calendar,
     route: "/workshops",
-    color: "bg-orange-50 hover:bg-orange-100 border-orange-200"
+    color: "bg-orange-50 hover:bg-orange-100 border-orange-200 dark:bg-orange-950 dark:hover:bg-orange-900 dark:border-orange-800"
   },
   {
     title: "Join Community",
-    description: "Connect with like-minded professionals",
+    description: "Connect with BAME professionals nationwide",
     icon: MessageCircle,
     route: "/community",
-    color: "bg-teal-50 hover:bg-teal-100 border-teal-200"
+    color: "bg-teal-50 hover:bg-teal-100 border-teal-200 dark:bg-teal-950 dark:hover:bg-teal-900 dark:border-teal-800"
   },
   {
     title: "Career Path Quiz",
-    description: "Discover your ideal career direction",
+    description: "Discover your ideal path in UK energy sector",
     icon: User,
     route: "/career-explorer",
-    color: "bg-indigo-50 hover:bg-indigo-100 border-indigo-200"
+    color: "bg-emerald-50 hover:bg-emerald-100 border-emerald-200 dark:bg-emerald-950 dark:hover:bg-emerald-900 dark:border-emerald-800"
   }
 ];
 

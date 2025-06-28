@@ -5,6 +5,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ThemeProvider } from "@/components/theme/ThemeProvider";
 
 import AuthPage from './components/auth/AuthPage';
 import AppLayout from './components/layout/AppLayout';
@@ -31,31 +32,37 @@ const App = () => {
   };
 
   if (!isAuthenticated) {
-    return <AuthPage onLogin={handleLogin} />;
+    return (
+      <ThemeProvider defaultTheme="system" storageKey="bame-platform-theme">
+        <AuthPage onLogin={handleLogin} />
+      </ThemeProvider>
+    );
   }
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <AppLayout onLogout={handleLogout}>
-            <Routes>
-              <Route path="/" element={<Dashboard />} />
-              <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/scholarships" element={<Scholarships />} />
-              <Route path="/mentorship" element={<Mentorship />} />
-              <Route path="/jobs" element={<Jobs />} />
-              <Route path="/workshops" element={<Workshops />} />
-              <Route path="/community" element={<Community />} />
-              <Route path="/career-explorer" element={<CareerExplorer />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </AppLayout>
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
+    <ThemeProvider defaultTheme="system" storageKey="bame-platform-theme">
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <AppLayout onLogout={handleLogout}>
+              <Routes>
+                <Route path="/" element={<Dashboard />} />
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/scholarships" element={<Scholarships />} />
+                <Route path="/mentorship" element={<Mentorship />} />
+                <Route path="/jobs" element={<Jobs />} />
+                <Route path="/workshops" element={<Workshops />} />
+                <Route path="/community" element={<Community />} />
+                <Route path="/career-explorer" element={<CareerExplorer />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </AppLayout>
+          </BrowserRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </ThemeProvider>
   );
 };
 
