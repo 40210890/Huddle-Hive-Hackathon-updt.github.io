@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -73,6 +72,7 @@ const Jobs = () => {
   const [experienceFilter, setExperienceFilter] = useState('all');
   const [typeFilter, setTypeFilter] = useState('all');
   const [showFilters, setShowFilters] = useState(false);
+  const [activeTab, setActiveTab] = useState('browse');
 
   const filteredJobs = jobs.filter(job => {
     const matchesSearch = job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -105,7 +105,7 @@ const Jobs = () => {
         <p className="text-muted-foreground">Discover opportunities in the UK energy sector. Supporting career advancement for BAME professionals.</p>
       </div>
 
-      <Tabs defaultValue="browse" className="w-full">
+      <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
         <TabsList className="grid w-full grid-cols-3">
           <TabsTrigger value="browse">Browse Jobs</TabsTrigger>
           <TabsTrigger value="applications">My Applications</TabsTrigger>
@@ -271,7 +271,7 @@ const Jobs = () => {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">You haven't applied to any jobs yet.</p>
-              <Button className="mt-4" onClick={() => document.querySelector('[value="browse"]')?.click()}>
+              <Button className="mt-4" onClick={() => setActiveTab('browse')}>
                 Browse Jobs
               </Button>
             </CardContent>
