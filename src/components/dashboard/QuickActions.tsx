@@ -1,0 +1,82 @@
+
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { useNavigate } from 'react-router-dom';
+import { Search, Users, FileSearch, Calendar, Message, User } from 'lucide-react';
+
+const quickActions = [
+  {
+    title: "Find Scholarships",
+    description: "Browse available funding opportunities",
+    icon: Search,
+    route: "/scholarships",
+    color: "bg-blue-50 hover:bg-blue-100 border-blue-200"
+  },
+  {
+    title: "Connect with Mentors",
+    description: "Find experienced professionals to guide you",
+    icon: Users,
+    route: "/mentorship",
+    color: "bg-green-50 hover:bg-green-100 border-green-200"
+  },
+  {
+    title: "Explore Jobs",
+    description: "Discover career opportunities",
+    icon: FileSearch,
+    route: "/jobs",
+    color: "bg-purple-50 hover:bg-purple-100 border-purple-200"
+  },
+  {
+    title: "Join Workshops",
+    description: "Enhance your skills with training",
+    icon: Calendar,
+    route: "/workshops",
+    color: "bg-orange-50 hover:bg-orange-100 border-orange-200"
+  },
+  {
+    title: "Join Community",
+    description: "Connect with like-minded professionals",
+    icon: Message,
+    route: "/community",
+    color: "bg-teal-50 hover:bg-teal-100 border-teal-200"
+  },
+  {
+    title: "Career Path Quiz",
+    description: "Discover your ideal career direction",
+    icon: User,
+    route: "/career-explorer",
+    color: "bg-indigo-50 hover:bg-indigo-100 border-indigo-200"
+  }
+];
+
+const QuickActions = () => {
+  const navigate = useNavigate();
+
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>Quick Actions</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {quickActions.map((action, index) => (
+            <Button
+              key={index}
+              variant="outline"
+              className={`h-auto p-4 flex flex-col items-start text-left ${action.color} border-2 transition-all duration-200 hover:scale-105`}
+              onClick={() => navigate(action.route)}
+            >
+              <div className="flex items-center gap-3 mb-2">
+                <action.icon className="h-5 w-5" />
+                <span className="font-semibold">{action.title}</span>
+              </div>
+              <p className="text-sm text-muted-foreground">{action.description}</p>
+            </Button>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
+  );
+};
+
+export default QuickActions;
