@@ -25,14 +25,14 @@ const AuthPage = ({ onLogin }: AuthPageProps) => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/10 via-background to-accent/20 p-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/10 via-background to-accent/20 p-4 ">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-primary mb-2">EnergyConnect</h1>
           <p className="text-muted-foreground">Join the future of sustainable energy careers</p>
         </div>
 
-        <Card className="gradient-card border-0 shadow-2xl">
+        <Card className="bg-[#150416] border-0 shadow-2x">
           <CardHeader>
             <CardTitle>Welcome</CardTitle>
             <CardDescription>
@@ -67,11 +67,11 @@ const AuthPage = ({ onLogin }: AuthPageProps) => {
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="firstName">First Name</Label>
-                      <Input id="firstName" placeholder="John" required />
+                      <Input id="firstName"className='bg-white text-black placeholder-black'  placeholder="John" required />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="lastName">Last Name</Label>
-                      <Input id="lastName" placeholder="Doe" required />
+                      <Input id="lastName" placeholder="Doe" required className='bg-white text-black placeholder-black' />
                     </div>
                   </div>
                   <div className="space-y-2">

@@ -51,7 +51,7 @@ const App = () => {
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/scholarships" element={<Scholarships />} />
-                <Route path="/mentorship" element={<Mentorship />} />
+                <Route path="/mentorship" element={<Mentorship darkMode={false} />} />
                 <Route path="/jobs" element={<Jobs />} />
                 <Route path="/workshops" element={<Workshops />} />
                 <Route path="/community" element={<Community />} />
